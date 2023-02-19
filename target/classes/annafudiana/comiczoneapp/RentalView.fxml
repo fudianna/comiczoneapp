@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="811.0" prefWidth="870.0" spacing="5.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="annafudiana.comiczoneapp.RentalController">
+    <padding>
+        <Insets bottom="10.0" top="10.0" />
+    </padding>
+    <VBox>
+        <children>
+            <Label prefHeight="27.0" prefWidth="790.0" text="COMIC ZONE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+                <VBox.margin>
+                    <Insets left="20.0" right="20.0" />
+                </VBox.margin>
+                <padding>
+                    <Insets left="20.0" right="20.0" />
+                </padding>
+            </Label>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="606.0" text="Rental" textAlignment="RIGHT">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font></Label>
+            <Label fx:id="txtfBillGrandTotal" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="706.0" text="0.0" textFill="#1846ff" underline="true">
+                <font>
+                    <Font name="System Bold" size="19.0" />
+                </font></Label>
+        </children>
+        <padding>
+            <Insets top="10.0" />
+        </padding>
+    </VBox>
+    <VBox spacing="5.0" style="-fx-background-color: pink;">
+
+        <children>
+            <HBox prefHeight="38.0" prefWidth="860.0">
+                <children>
+                    <Label prefHeight="40.0" prefWidth="100.0" text="ID Rental">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                        <font>
+                            <Font size="17.0" />
+                        </font>
+                    </Label>
+                    <TextField fx:id="txtfIDrental" />
+                </children>
+            </HBox>
+            <HBox prefHeight="38.0" prefWidth="860.0">
+                <children>
+                    <Label contentDisplay="CENTER" prefHeight="38.0" prefWidth="100.0" text="ID Customer">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="txtfIDCustomer">
+                        <HBox.margin>
+                            <Insets right="20.0" />
+                        </HBox.margin>
+                    </TextField>
+                    <Button mnemonicParsing="false" onAction="#btnNamaCustomerCheck" prefWidth="190.0" text="View nama customer">
+                        <HBox.margin>
+                            <Insets right="20.0" />
+                        </HBox.margin>
+                    </Button>
+                    <TextField fx:id="txtfCustomerName" layoutX="72.0" layoutY="10.0" />
+                </children>
+            </HBox>
+            <HBox prefHeight="38.0" prefWidth="860.0">
+                <children>
+                    <Label contentDisplay="CENTER" prefHeight="38.0" prefWidth="100.0" text="ID Karyawan">
+                        <HBox.margin>
+                            <Insets right="15.0" />
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="txtfIDEmployee">
+                        <HBox.margin>
+                            <Insets right="20.0" />
+                        </HBox.margin>
+                    </TextField>
+                    <Button mnemonicParsing="false" onAction="#btnNamaKaryawanCheck" prefWidth="190.0" text="View nama karyawan">
+                        <HBox.margin>
+                            <Insets right="20.0" />
+                        </HBox.margin>
+                    </Button>
+                    <TextField fx:id="txtfEmployeeName" layoutX="72.0" layoutY="10.0" />
+                </children>
+            </HBox>
+        </children>
+        <padding>
+            <Insets bottom="15.0" left="40.0" right="40.0" top="15.0" />
+        </padding>
+        <VBox.margin>
+            <Insets />
+        </VBox.margin>
+    </VBox>
+    <VBox prefHeight="156.0" prefWidth="830.0" style="-fx-background-color: lightblue;">
+        <children>
+            <HBox prefHeight="106.0" prefWidth="830.0" spacing="20.0">
+                <children>
+                    <VBox prefHeight="63.0" prefWidth="190.0" spacing="1.0">
+                        <children>
+                            <Label prefHeight="26.0" prefWidth="103.0" text="Kode Buku" />
+                            <ComboBox fx:id="cbxBookCode" prefWidth="190.0" />
+                        </children>
+                    </VBox>
+                    <VBox layoutX="30.0" layoutY="25.0" prefHeight="69.0" prefWidth="410.0" spacing="1.0">
+                        <children>
+                            <Label prefHeight="26.0" prefWidth="103.0" text="Nama Buku" />
+                            <TextField fx:id="txtfBookName" prefHeight="37.0" prefWidth="430.0" />
+                        </children>
+                    </VBox>
+                    <VBox prefHeight="79.0" prefWidth="140.0" spacing="1.0">
+                        <children>
+                            <Label prefHeight="26.0" prefWidth="103.0" text="Harga" />
+                            <TextField fx:id="txtfBookPrice" prefHeight="37.0" prefWidth="143.0" />
+                        </children>
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets left="20.0" />
+                </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                <children>
+                    <VBox prefHeight="100.0" prefWidth="190.0" spacing="1.0">
+                        <children>
+                            <Label prefHeight="26.0" prefWidth="198.0" text="Tgl Peminjaman" />
+                            <DatePicker fx:id="dpDateBorrow" />
+                        </children>
+                    </VBox>
+                    <VBox prefHeight="73.0" prefWidth="190.0" spacing="1.0">
+                        <children>
+                            <Label prefHeight="26.0" prefWidth="196.0" text="Tgl Pengembalian" />
+                            <DatePicker fx:id="dpDateReturn" />
+                        </children>
+                    </VBox>
+                    <VBox prefHeight="73.0" prefWidth="140.0" spacing="1.0">
+                        <children>
+                            <Label prefHeight="26.0" prefWidth="103.0" />
+                            <Button mnemonicParsing="false" onAction="#btnAddItemClick" prefHeight="37.0" prefWidth="140.0" text="Tambah item" />
+                        </children>
+                        <HBox.margin>
+                            <Insets left="60.0" />
+                        </HBox.margin>
+                    </VBox>
+                    <VBox prefHeight="73.0" prefWidth="140.0" spacing="1.0">
+                        <children>
+                            <Label prefHeight="26.0" prefWidth="103.0" />
+                            <Button mnemonicParsing="false" onAction="#btnDeleteItemClick" prefWidth="140.0" text="Hapus item" />
+                        </children>
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </HBox>
+        </children>
+        <padding>
+            <Insets bottom="15.0" left="20.0" right="20.0" top="15.0" />
+        </padding>
+    </VBox>
+    <VBox maxWidth="875.0" spacing="10.0">
+        <children>
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="918.0" text="DETAIL ORDER">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+            <TableView fx:id="TabelOrderAll" prefHeight="178.0" prefWidth="790.0">
+                <columns>
+                    <TableColumn fx:id="columnBookCode" maxWidth="200.0" prefWidth="125.60000306367874" text="Kode buku" />
+                    <TableColumn fx:id="columnBookName" maxWidth="200.0" prefWidth="194.40003967285156" text="Nama Buku" />
+                    <TableColumn fx:id="columnDateBorrow" maxWidth="200.0" prefWidth="172.0" text="Tgl Peminjaman" />
+                    <TableColumn fx:id="columnDateReturn" maxWidth="200.0" minWidth="120.0" prefWidth="165.5999755859375" text="Tgl Pengembalian" />
+                    <TableColumn fx:id="columnPriceList" maxWidth="200.0" minWidth="111.20001220703125" prefWidth="130.39999999999998" text="Harga" />
+                </columns>
+            </TableView>
+            <VBox spacing="5.0">
+                <children>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="960.0" spacing="35.0">
+                        <children>
+                            <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="60.0" text="Bayar" />
+                            <TextField fx:id="txtfPayment" prefWidth="190.0" />
+                            <Button mnemonicParsing="false" onAction="#btnSaveRecordClick" prefHeight="38.0" prefWidth="140.0" text="Simpan" />
+                        </children>
+                    </HBox>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="960.0" spacing="35.0">
+                        <children>
+                            <Label alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="84.0" text="Kembalian" />
+                            <TextField fx:id="txtfChangePayment" disable="true" prefWidth="190.0" />
+                            <Button mnemonicParsing="false" onAction="#btnExitClick" prefHeight="38.0" prefWidth="140.0" text="Exit" />
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </children>
+        <padding>
+            <Insets bottom="15.0" left="40.0" right="40.0" top="15.0" />
+        </padding>
+    </VBox>
+</VBox>
